@@ -223,9 +223,9 @@ l[0:2] = [10, 11, 12, 13, 14]
 print(l)# [10, 11, 12, 13, 14, 3, 4, 5]
 ```
  
-+ s[i:j:k] = t : Chỉ là sử dụng thêm bước nhảy k giúp linh hoạt lựa chọn các phần từ có khoảng cách cách đều nhau với độ dài quãng bằng k
++ s[i:j:k] = t : Gán những phần tử từ list t vào những vị trí (cách đều k tương ứng) trong mảng s
 
-+ del s[i:j] : Giống với cách s[i:j] = [ ], tức xóa các phần tử trong danh sách có chỉ số từ i đến (j-1).
++ del s[i:j] : Giống với cách s[i:j] = [ ], tức xóa các phần tử trong danh sách có chỉ số từ i đến (j-1). Chú ý đối với việc xóa một phần tử trong list, ví dụ muốn xóa phần tử có index = 1 ta cần làm như sau s[1:2]=[] (còn nếu làm theo kiểu s[1]=[] thì đây không là thao tác xóa mà là thao tác thay phần tử này bởi list rỗng []), còn nếu sử dụng cách xóa bằng del thì có thể del s[i] hoặc del s[i:j] hoặc del s[i:j:k] đều được !!!
 Ví dụ : 
 ```python 
 l = [1,2,3,4,5]
@@ -281,15 +281,15 @@ print(s)# [3, 2, 1]
 ```
 
 ### 1.3.3.	List trong Python : 
--	List là một kiểu danh sách mutable (có thể cập nhật và thay đổi) trong Python. Nó được dùng để lưu các phần tử đồng nhất (có cùng kiểu dữ liệu))
--	List là một class trong Python. Mỗi đối tượng của list có thể được khởi tạo theo những cách sau : 
-  + Sử dụng ngoặc vuông rỗng : [ ] để khởi tạo list rỗng
+- List là một kiểu danh sách mutable (có thể cập nhật và thay đổi) trong Python. Nó được dùng để lưu các phần tử đồng nhất (có cùng kiểu dữ liệu))
+- List là một class trong Python. Mỗi đối tượng của list có thể được khởi tạo theo những cách sau : 
+  - Sử dụng ngoặc vuông rỗng : [ ] để khởi tạo list rỗng
   
-  + [a, b, c] khởi tạo list chứa các phần tử. Các phần tử này được cách nhau bởi dấu phẩy
+  - [a, b, c] khởi tạo list chứa các phần tử. Các phần tử này được cách nhau bởi dấu phẩy
   
-  + Sử dụng List Comprehension để khởi tạo list : [f(x) for x in iterable], trong đó iterable như là một danh sách, vòng for sẽ lấy từng phần tử bên trong danh sách đó, còn f(x) có nghĩa là một công thức bất kỳ : ví dụ 2*x + 3, thì với mỗi x có được, nó sẽ tính toán dựa trên công thức này. Thu được kết quả và đưa dần vào list!
+  - Sử dụng List Comprehension để khởi tạo list : [f(x) for x in iterable], trong đó iterable như là một danh sách, vòng for sẽ lấy từng phần tử bên trong danh sách đó, còn f(x) có nghĩa là một công thức bất kỳ : ví dụ 2*x + 3, thì với mỗi x có được, nó sẽ tính toán dựa trên công thức này. Thu được kết quả và đưa dần vào list!
   
-  + sử dụng constructor : list() hoặc list(iterable). Hàm này cũng được như dụng như một hàm ép kiểu về dạng list. 
+  - sử dụng constructor : list() hoặc list(iterable). Hàm này cũng được như dụng như một hàm ép kiểu về dạng list. 
   Ví dụ : 
 ```python
 	print(list([1,2,3]))# [1, 2, 3]
@@ -298,8 +298,8 @@ print(s)# [3, 2, 1]
 ```
 
 ### 1.3.4.	Tuples 
--	Là một kiểu danh sách có tính chất immutable (tức không phép cập nhật các phần tử, chỉ có thể đọc và truy xuất các phần tử)
--	Là một class trong Python với các cách khởi tạo như sau : 
+- Là một kiểu danh sách có tính chất immutable (tức không phép cập nhật các phần tử, chỉ có thể đọc và truy xuất các phần tử)
+- Là một class trong Python với các cách khởi tạo như sau : 
   + Sử dụng ( ) để khởi tạo một tuple rỗng
   + (a, ) để khởi tạo tuple có 1 phần tử duy nhất. Tại sao lại cần dấu phẩy? Bởi vì để trình thông dịch tránh nhầm lẫn với 1 biểu thức trong ngoặc như (5) chẳng hạn
   + (a, b, c) : Khi tuple có nhiều phần tử thì các phần tử phải cách nhau bởi dấu phẩy
@@ -315,8 +315,8 @@ print(tuple((1,2,3)))# (1, 2, 3)
 ==> Từ bài này, ta có thể tham khảo thêm kiến thức về enumerate tại link này : https://docs.python.org/3/library/functions.html#enumerate. Từ đó hiểu thêm về enumerate và hàm field (hàm này chỉ được sử dụng bên trong một function, nếu đặt bên ngoài một function trình thông dịch sẽ báo lỗi. Hàm này để tạo ra các dạng (key, value) thì phải???)
 
 ### 1.3.5.	Range
--	Sử dụng để tạo ra một chuỗi các số, chuỗi này có tính chất immutable (tức có thể cập nhật các phần tử). Nó được sử dụng phổ biến trong các vòng lặp for trong việc duyệt các phần tử
--	Đây là một class. Nó được thể hiện ở hai dạng chính : 
+- Sử dụng để tạo ra một chuỗi các số, chuỗi này có tính chất immutable (tức có thể cập nhật các phần tử). Nó được sử dụng phổ biến trong các vòng lặp for trong việc duyệt các phần tử
+- Đây là một class. Nó được thể hiện ở hai dạng chính : 
   + range(stop) : Tạo ra một danh sách chứa các số từ 0 tới (stop-1)
   + range(start, stop[, step]) : Tạo ra một danh sách các số từ start tới (stop-1). Còn step để cho biết bước nhảy- khoảng cách giữa các index của phần tử trong danh sách
   
@@ -343,17 +343,18 @@ print(r[-1])# 9, kỳ diệu khi cũng trả về phần tử cuối cùng
 
 ### 1.3.6.	String trong Python : (Tìm hiểu sau)
 ### 1.3.7.	Set trong Python
--	Đối tượng set là một tập hợp các đối tượng phân biệt và không có thứ tự. Nó thường được sử dụng trong việc xóa các phần tử lặp, tính toán các thao tác toán học như : giao, hợp, trừ tập hợp, …
--	Set không hỗ trợ : truy xuất index (indexing) hoặc slicing(duyệt/tách một phần của danh sách),…
--	Set hỗ trợ : x in set, len(set), for x in set
--	Có 2 kiều dữ liệu cho dạng set : set và frozenset
+- Đối tượng set là một tập hợp các đối tượng phân biệt và không có thứ tự. Nó thường được sử dụng trong việc xóa các phần tử lặp, tính toán các thao tác toán học như : giao, hợp, trừ tập hợp, …
+- Set không hỗ trợ : truy xuất index (indexing) hoặc slicing(duyệt/tách một phần của danh sách),…
+- Set hỗ trợ : x in set, len(set), for x in set
+- Có 2 kiều dữ liệu cho dạng set : set và frozenset
   + set : có tính chất mutable (có thể update danh sách). Do tính chất mutable nên nó không có giá trị hash (giá trị băm), và không thể được sử dụng làm key cho từ điển
   + frozenset : có tính chất immutable (không thể cập nhật), vì vậy nó có giá trị hash và có thể được sử dụng như các key trong từ điển
   + Khởi tạo set và hình dạng của set : {1,2,3} hoặc {‘a’, ‘b’, ‘c’}, hoặc sử dụng các hàm constructor set([iterable]) hoặc frozenset([iterable])
--	Các phương thức của Set : (tìm hiểu sau)
+- Các phương thức của Set : (tìm hiểu sau)
 
 ### 1.3.8.	Dict trong Python
-- Note Quá trình làm project : 
+
+### Note Quá trình làm project : 
   -	Khi thực hiện thao tác với Ma trận thì ta nên sử dụng thư viện numpy. Tức chuyển từ 1 list sang dạng array của numpy bằng np.array(list, kiểu dữ liệu)
   -	Đối với array trong numpy, giả sử nó đang là ma trận mà ta muốn truy xuất riêng các cột hoặc các hàng trong ma trận đó, ta làm như sau : a[1:5][2:4] để truy xuất các hàng từ 1 đến hàng 4 (= 5-1) và từ cột 2 tới cột 3 (= 4 – 1). Còn khi cần sử dụng bước nhảy thì ta làm như sau : a[1:5:2][2:4]
   -	Khi ta muốn nhân các ma trận, vector : Ở đây là nhân một cách thực sự thì ta cần phải sử dụng đến phương thức .dot(…). Ví dụ : a.dot(b). Còn khi muốn chia thì ta tiến hành nhân nghịch đảo thôi. Để tìm ma trận nghịch đảo của một ma trận thì ta sử dụng np.linalg.pinv(a) : Đây là cách tìm ma trận giả nghịch đảo (tức nó vẫn trả khi ma trận đó suy biến), hoặc sử dụng np.linalg.inv(a) để tìm ma trận nghịch đảo của a (ở trường hợp này thì có khả năng xảy ra suy biến )  ??? Hãy so sánh 2 hàm trên !!!
