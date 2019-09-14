@@ -1,0 +1,16 @@
+1. TRUY CẬP TỪ XA VÀO SERVER MICA THÔNG QUA TERMINAL BẰNG GIAO THỨC SSH:
+*** Khi sử dụng wifi của mica ==> Vào terminal rồi truy cập : 
+ssh tranquoctoan@172.16.77.162
+password yêu cầu : 123456
+
+*** Khi sử dụng wifi - mạng tại nhà ==> Vào terminal rồi truy cập : 
+ssh tranquoctoan@mica.edu.vn -p 8001
+password (yêu cầu) : 123456
+
+2. HƯỚNG DẪN SỬ DỤNG VIMOCOGAN-1 (CHO 1 ĐỐI TƯỢNG):
+- Vào thư mục chứa mã nguồn: 
+cd /media/data3/toantq/GenerateVideos_1111/vimocogan_1
+- Lệnh chạy:
+
+
+virtualenv -p python2 /media/data3/toantq/GenerateVideos_1111/vimocogan_1
